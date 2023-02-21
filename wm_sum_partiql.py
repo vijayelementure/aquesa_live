@@ -8,7 +8,7 @@ load_dotenv()
 
 # dynamodb = boto3.client('dynamodb', region_name='us-east-1')
 dynamodb = boto3.client('dynamodb',region_name = os.getenv('REGION_NAME'),aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID'),aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'))
-resp = dynamodb.execute_statement(Statement='SELECT * FROM aquesa_live WHERE P_key = ?', Parameters =[{'S': 'baff91a7-2dbb-4461-82c7-5f48b1d227fe'}])
+resp = dynamodb.execute_statement(Statement='SELECT * FROM aquesa_live WHERE P_key = ?', Parameters =[{'S': 'e687f849-41ba-4ec0-9f95-10988a081458'}])
 # print(resp['Items'])
 sum = 0
 for item in resp['Items']:

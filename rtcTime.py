@@ -1,7 +1,4 @@
 import paho.mqtt.client as mqtt
-
-
-
 import boto3
 import os
 import uuid
@@ -19,12 +16,13 @@ def message(pub,userdata,msg):
     mypayload = json.loads(msg.payload.decode("utf-8"))
     for p_id, p_info in mypayload.items():
           print("\Device Data:",mypayload[p_id])   # for data
-          
+          print("\n")
+          print("time data",mypayload[p_id]['data']['evt']['etm'])
           devid = mypayload[p_id]['data']['devId']   # for partition key
-          
+          event_time = mypayload[p_id]['data']['evt']['etm']
           table.put_item(
             Item={"P_key": devid,
-                  "S_key": str(datetime.datetime.now()),
+                  "S_key": event_time,
                   "topic": msg.topic,
                   "payload" : mypayload[p_id]
               }
@@ -43,6 +41,9 @@ pub.subscribe("/data",qos=1)
 
 pub.on_message = message
 pub.loop_forever()
+
+print()
+
 
 
 
