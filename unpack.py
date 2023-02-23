@@ -1,7 +1,4 @@
 import paho.mqtt.client as mqtt
-
-
-
 import boto3
 import os
 import uuid
