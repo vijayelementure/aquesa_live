@@ -18,7 +18,7 @@ def message(pub,userdata,msg):
           print("\Device Data:",mypayload[p_id])   # for data
           
           devid = mypayload[p_id]['data']['devId']   # for partition key
-          
+          arrival_time = mypayload[p_id]['data']['evt']
           table.put_item(
             Item={"P_key": devid,
                   "S_key": str(datetime.datetime.now()),
