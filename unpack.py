@@ -12,7 +12,8 @@ table = dynamodb.Table('aquesa_live')
 
 def message(pub,userdata,msg):
     #print(msg.topic)
-    #print(msg.payload.decode('utf-8'))
+    print(msg.payload.decode('utf-8'))
+    print("packed data")
     mypayload = json.loads(msg.payload.decode("utf-8"))
     for p_id, p_info in mypayload.items():
           print("\Device Data:",mypayload[p_id])   # for data

@@ -22,7 +22,7 @@ table = dynamodb.Table('TestProd')
 # start_timestamp = str(datetime(2023, 5, 17, 00, 00, 00)) # Change start time with Date If Required
 # end_timestamp = str(datetime(2023, 5, 18, 23, 59, 59)) # Change end time with Date If Required
 
-devid = "a0624a52-1df2-4d26-bba8-0aa05c27d2b6"
+devid = "bbff3163-00d5-4cdc-927e-b25170e13f48"
 # devid = [bbff3163-00d5-4cdc-927e-b25170e13f48,
 # "54de714e-c3a2-4b53-b247-2bf4372f8a9c",
 # "2e35120e-3ba2-4323-9dec-1cf84ae9fcf0",
@@ -31,8 +31,8 @@ devid = "a0624a52-1df2-4d26-bba8-0aa05c27d2b6"
 
 
 #2023-05-19 15:59:10.417072
-start_timestamp = "2023-05-25T23:59:59Z"
-end_timestamp = "2023-05-26T01:00:00Z"
+start_timestamp = "2023-05-31T00:00:00Z"
+end_timestamp = "2023-05-31T23:59:59Z"
 
 print(end_timestamp)
 

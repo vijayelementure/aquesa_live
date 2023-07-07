@@ -4,8 +4,8 @@ import datetime
 
 
 def message(pub,userdata,msg):
-    # print(msg.topic)
-    # print(msg.payload) 
+    print(msg.topic)
+    print(msg.payload)
     print(userdata)
   
 clientID = "acquesa-01"
@@ -16,7 +16,8 @@ pub.tls_set("./certificates/AmazonRootCA1.crt","./certificates/certificate.pem",
 pub.connect(broker,port,45)
 #pub.publish("/data", "i am from python", qos=1)
 
-pub.subscribe("/data",qos=1)
+
+pub.subscribe("/switchcontrol",qos=1)
 
 
 pub.on_message = message

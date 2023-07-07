@@ -19,7 +19,7 @@ def json_count(items:deviceattr):
      response = table.query(
         KeyConditionExpression="#pk = :pk and #sk between :start_date and :end_date",
         ProjectionExpression="json_id",
-        ExpressionAttributeNames={"#pk": "device_id", "#sk": "device_time"},
+        ExpressionAttributeNames={"#pk": "device_id", "#sk": "data_time"},
         ExpressionAttributeValues={
         ":pk": items.deviceid,
         ":start_date": items.startdate,

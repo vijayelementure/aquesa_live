@@ -5,8 +5,6 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-from datetime import datetime
-
 timenow = datetime.now()
 
 
@@ -29,8 +27,8 @@ table = dynamodb.Table('TestProd')
 devid = ["bbff3163-00d5-4cdc-927e-b25170e13f48","54de714e-c3a2-4b53-b247-2bf4372f8a9c","2e35120e-3ba2-4323-9dec-1cf84ae9fcf0","a0624a52-1df2-4d26-bba8-0aa05c27d2b6","78ad7e34-3b2c-4232-9781-0a131de9e93e"]
 
 #2023-05-19 15:59:10.417072
-start_timestamp = "2023-05-26T00:00:00Z"
-end_timestamp = "2023-05-26T15:00:00Z"
+start_timestamp = "2023-06-11T00:00:00Z"
+end_timestamp = "2023-06-12T23:59:59Z"
 
 
 print(end_timestamp)
@@ -56,7 +54,7 @@ def consumption():
     
         for item in response["Items"]:
             total_csm += item["consumption"]
-        total_res = total_csm/100
+        total_res = total_csm/10
     return total_res
     
     
